@@ -15,10 +15,9 @@ if not show_instructions:
     print("        INSTRUCTIONS      ")
     print("**************************")
     print("1. Enter your name.")
-    print("2. Enter your age.")
-    print("3. Make the payment (cash or credit).")
-    print("4. You will be entered into the draw to win a prize.")
-    print("5. If your name is called out, please come to collect your prize.")
+    print("2. Enter the shape you'd like to calculate (Choose from either a triangle, square, rectangle, circle, or parallelogram).")
+    print("3. Enter the numbers into the showen formula.")
+    print("4. You will recive your calculations on a table when you wish to be finished with all your calculations ")
     print("**************************")
 
 
