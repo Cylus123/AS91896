@@ -8,16 +8,16 @@ def yes_no(question):
         else:
             print("Please enter 'yes' or 'no'.")
 
-show_instructions = yes_no("Yes or no? ")
+show_instructions = yes_no("Have you used the Area/Perimeter tool before ?: ")
 
 if not show_instructions:
     print("**************************")
     print("        INSTRUCTIONS      ")
     print("**************************")
     print("1. Enter your name.")
-    print("2. Enter the shape you'd like to calculate (Choose from either a triangle, square, rectangle, circle, or parallelogram).")
-    print("3. Enter the numbers into the showen formula.")
-    print("4. You will recive your calculations on a table when you wish to be finished with all your calculations ")
+    print("2. Choose a shape to calculate: triangle, square, rectangle, circle, or parallelogram.")
+    print("3. Enter the required measurements for the selected shape.")
+    print("4. Your calculations will be displayed in a table when you finish.")
     print("**************************")
 
 
