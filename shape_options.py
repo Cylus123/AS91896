@@ -18,7 +18,10 @@ while True:
        parallelogram_formula_base = int(input("What would you like to enter for B(base)"))
       parallelogram_formula_base2 = int(input("What would you like to enter for H(height)"))
 
-      elif
+     elif reply.startswith('r'):
+      print("The formula for Area of a parallelogram is A = L x W"  )              
+       parallelogram_formula_base = int(input("What would you like to enter for L(length)"))
+      parallelogram_formula_base2 = int(input("What would you like to   enter for W(width)"))
 
 
         # If the response starts with 'n', 
