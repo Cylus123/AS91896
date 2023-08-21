@@ -27,19 +27,3 @@ if not show_instructions:
 
     print('If you decide that you are finished with all your calculations type in the code "xxx" and it will automaticlly exit you out of the program!')
     print("**************************")
-
-
-
-
-
-
-  
-
-
-    
-  
-
-    
-
-   
-   
