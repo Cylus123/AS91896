@@ -1,4 +1,3 @@
-# Define a function to get a yes or no response from the user
 def yes_no(question):
     while True:
         reply = input(question).strip().lower()
@@ -12,7 +11,6 @@ def yes_no(question):
             # If the response is not 'yes' or 'no', prompt the user again
             print("Please enter 'yes' or 'no'.")
 
-# Define a function to display the formula for a given shape
 def calculate_area(shape):
     if shape.startswith('t'):
         # If the response starts with 't', that means they want a triangle
@@ -38,7 +36,6 @@ def calculate_area(shape):
         # If the response is not one of the recognized shapes, inform the user
         print("I apologize, but the Area/Perimeter tool only knows 5 shapes right now. Please enter one of the shapes provided.")
 
-# Define the main function to run the program
 def main():
     # Get the user's response to whether they want to see instructions
     show_instructions = yes_no("Have you used the Area/Perimeter tool before? : ")
@@ -55,27 +52,15 @@ def main():
         print('If you decide that you are finished with all your calculations, type in the code "xxx" to exit the program.')
         print("**************************")
     
-    # Ask the user to enter a shape for calculation
     reply = input("What shape would you like to calculate? (Enter 'xxx' to exit): ").strip().lower()
     
-    # Check the user's response and take appropriate action
     if reply != 'xxx':
-        if not reply:
-            # If the user didn't enter anything for the shape
-            print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
-        elif reply.isalpha():
-            # If the user entered a valid shape name, display the formula
+        if reply.isalpha():
             calculate_area(reply)
         else:
-            # If the user entered an invalid input
             print("Invalid input. Please enter a valid shape name.")
     else:
-        # If the user entered 'xxx', exit the program
         print("Exiting the program.")
 
 # Call the main function to run the program
 main()
-
-
-
-
