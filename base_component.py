@@ -52,10 +52,12 @@ def main():
         print('If you decide that you are finished with all your calculations, type in the code "xxx" to exit the program.')
         print("**************************")
     
-    reply = input("What shape would you like to calculate? (Enter 'xxx' to exit): ").strip().lower()
+    reply = input("What shape would you like to calculate?: ").strip().lower()
     
     if reply != 'xxx':
-        if reply.isalpha():
+        if not reply:
+            print("You did not enter a shape, please enter a shape or use 'xxx' to quit the code: ")
+        elif reply.isalpha():
             calculate_area(reply)
         else:
             print("Invalid input. Please enter a valid shape name.")
@@ -64,5 +66,6 @@ def main():
 
 # Call the main function to run the program
 main()
+
 
 
