@@ -39,6 +39,7 @@ def calculate_area(shape):
         print("I apologize, but the Area/Perimeter tool only knows 5 shapes right now. Please enter one of the shapes provided.")
 
 # Define the main function to run the program
+# Define the main function to run the program
 def main():
     # Get the user's response to whether they want to see instructions
     show_instructions = yes_no("Have you used the Area/Perimeter tool before? : ")
@@ -55,27 +56,25 @@ def main():
         print('If you decide that you are finished with all your calculations, type in the code "xxx" to exit the program.')
         print("**************************")
     
-    # Ask the user to enter a shape for calculation
-    reply = input("What shape would you like to calculate? (Enter 'xxx' to exit): ").strip().lower()
+    while True:
+        # Ask the user to enter a shape for calculation
+        reply = input("What shape would you like to calculate? : ").strip().lower()
     
-    # Check the user's response and take appropriate action
-    if reply != 'xxx':
-        if not reply:
-            # If the user didn't enter anything for the shape
-            print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
-        elif reply.isalpha():
-            # If the user entered a valid shape name, display the formula
-            calculate_area(reply)
+        if reply != 'xxx':
+            if not reply:
+                # If the user didn't enter anything for the shape
+                print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
+            elif reply.isalpha():
+                # If the user entered a valid shape name, display the formula
+                calculate_area(reply)
+                break  # Break the loop if valid input is provided
+            else:
+                # If the user entered an invalid input
+                print("Invalid input. Please enter a valid shape name.")
         else:
-            # If the user entered an invalid input
-            print("Invalid input. Please enter a valid shape name.")
-    else:
-        # If the user entered 'xxx', exit the program
-        print("Exiting the program.")
+            # If the user entered 'xxx', exit the program
+            print("Exiting the program.")
+            break
 
 # Call the main function to run the program
 main()
-
-
-
-
