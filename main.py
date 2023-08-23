@@ -1,1 +1,1 @@
-import shape_options
+import base_component
