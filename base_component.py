@@ -12,31 +12,44 @@ def yes_no(question):
             # If the response is not 'yes' or 'no', prompt the user again
             print("Please enter 'yes' or 'no'.")
 
-# Define a function to display the formula for a given shape
-def shape_choice(shape):
+# Define a function to calculate the area of a given shape
+def calculate_area(shape, measurements):
     if shape.startswith('t'):
         # If the response starts with 't', that means they want a triangle
-        print("The formula for Area of a triangle is A = 1/2 × b × h")
+        base = measurements[0]
+        height = measurements[1]
+        area = 0.5 * base * height
+        return area
         
     elif shape.startswith('c'):
         # If the response starts with 'c', that means they want a circle
-        print("The formula for Area of a circle is A = π × r^2")
+        radius = measurements[0]
+        area = 3.14159 * radius * radius
+        return area
         
     elif shape.startswith('s'):
         # If the response starts with 's', that means they want a square
-        print("The formula for Area of a square is A = a^2")
+        side = measurements[0]
+        area = side * side
+        return area
         
     elif shape.startswith('p'):
         # If the response starts with 'p', that means they want a parallelogram
-        print("The formula for Area of a parallelogram is A = b x h")
+        base = measurements[0]
+        height = measurements[1]
+        area = base * height
+        return area
         
     elif shape.startswith('r'):
         # If the response starts with 'r', that means they want a rectangle
-        print("The formula for Area of a rectangle is A = L x W")
+        length = measurements[0]
+        width = measurements[1]
+        area = length * width
+        return area
         
     else:
-        # If the response is not one of the recognized shapes, inform the user
-        print("I apologize, but the Area/Perimeter tool only knows 5 shapes right now. Please enter one of the shapes provided.")
+        # If the response is not one of the recognized shapes, return None
+        return None
 
 # Define the main function to run the program
 def main():
@@ -64,8 +77,17 @@ def main():
                 # If the user didn't enter anything for the shape
                 print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
             elif reply.isalpha():
-                # If the user entered a valid shape name, display the formula
-                shape_choice(reply)
+                # If the user entered a valid shape name, prompt for measurements
+                measurements = []
+                for i in range(2):
+                    measurement = float(input(f"Enter measurement {i+1} for the {reply}: "))
+                    measurements.append(measurement)
+                
+                area = calculate_area(reply, measurements)
+                if area is not None:
+                    print(f"The area of the {reply} is: {area}")
+                else:
+                    print("I apologize, but the Area/Perimeter tool only knows 5 shapes right now. Please enter one of the shapes provided.")
                 break  # Break the loop if valid input is provided
             else:
                 # If the user entered an invalid input
@@ -77,4 +99,5 @@ def main():
 
 # Call the main function to run the program
 main()
+
 
