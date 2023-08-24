@@ -13,7 +13,7 @@ def yes_no(question):
             print("Please enter 'yes' or 'no'.")
 
 # Define a function to display the formula for a given shape
-def calculate_area(shape):
+def shape_choice(shape):
     if shape.startswith('t'):
         # If the response starts with 't', that means they want a triangle
         print("The formula for Area of a triangle is A = 1/2 × b × h")
@@ -38,7 +38,6 @@ def calculate_area(shape):
         # If the response is not one of the recognized shapes, inform the user
         print("I apologize, but the Area/Perimeter tool only knows 5 shapes right now. Please enter one of the shapes provided.")
 
-# Define the main function to run the program
 # Define the main function to run the program
 def main():
     # Get the user's response to whether they want to see instructions
@@ -66,7 +65,7 @@ def main():
                 print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
             elif reply.isalpha():
                 # If the user entered a valid shape name, display the formula
-                calculate_area(reply)
+                shape_choice(reply)
                 break  # Break the loop if valid input is provided
             else:
                 # If the user entered an invalid input
@@ -78,3 +77,4 @@ def main():
 
 # Call the main function to run the program
 main()
+
