@@ -13,37 +13,42 @@ def yes_no(question):
             print("Please enter 'yes' or 'no'.")
 
 # Define a function to calculate the area of a given shape
-def calculate_area(shape, measurements):
+def calculate_area(shape):
     if shape.startswith('t'):
         # If the response starts with 't', that means they want a triangle
-        base = measurements[0]
-        height = measurements[1]
+        print("The formula for Area of a triangle is A = 1/2 × base × height")
+        base = float(input("Enter the base length: "))
+        height = float(input("Enter the height: "))
         area = 0.5 * base * height
         return area
         
     elif shape.startswith('c'):
         # If the response starts with 'c', that means they want a circle
-        radius = measurements[0]
+        print("The formula for Area of a circle is A = π × radius^2")
+        radius = float(input("Enter the radius: "))
         area = 3.14159 * radius * radius
         return area
         
     elif shape.startswith('s'):
         # If the response starts with 's', that means they want a square
-        side = measurements[0]
+        print("The formula for Area of a square is A = side^2")
+        side = float(input("Enter the side length: "))
         area = side * side
         return area
         
     elif shape.startswith('p'):
         # If the response starts with 'p', that means they want a parallelogram
-        base = measurements[0]
-        height = measurements[1]
+        print("The formula for Area of a parallelogram is A = base × height")
+        base = float(input("Enter the base length: "))
+        height = float(input("Enter the height: "))
         area = base * height
         return area
         
     elif shape.startswith('r'):
         # If the response starts with 'r', that means they want a rectangle
-        length = measurements[0]
-        width = measurements[1]
+        print("The formula for Area of a rectangle is A = length × width")
+        length = float(input("Enter the length: "))
+        width = float(input("Enter the width: "))
         area = length * width
         return area
         
@@ -77,13 +82,8 @@ def main():
                 # If the user didn't enter anything for the shape
                 print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
             elif reply.isalpha():
-                # If the user entered a valid shape name, prompt for measurements
-                measurements = []
-                for i in range(2):
-                    measurement = float(input(f"Enter measurement {i+1} for the {reply}: "))
-                    measurements.append(measurement)
-                
-                area = calculate_area(reply, measurements)
+                # If the user entered a valid shape name, calculate the area
+                area = calculate_area(reply)
                 if area is not None:
                     print(f"The area of the {reply} is: {area}")
                 else:
@@ -99,5 +99,3 @@ def main():
 
 # Call the main function to run the program
 main()
-
-
