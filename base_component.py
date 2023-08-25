@@ -59,24 +59,26 @@ def calculate_area(shape, units):
 
 # Define the main function to run the program
 def main():
+    user_name = get_name()  # Ask for the user's name
+    print(f"Hello, {user_name}!")
+
     show_instructions = yes_no("Have you used the Area/Perimeter tool before? : ")
 
     if not show_instructions:
         print("**************************")
         print("        INSTRUCTIONS      ")
         print("**************************")
-        print("1. Enter your name.")
-        print("2. Choose a shape to calculate: triangle, square, rectangle, circle, or parallelogram.")
-        print("3. Enter the required measurements for the selected shape.")
-        print("4. Your calculations will be displayed in a table when you finish.")
+        print("1. Choose a shape to calculate: triangle, square, rectangle, circle, or parallelogram.")
+        print("2. Enter the required measurements for the selected shape.")
+        print("3. Your calculations will be displayed in a table when you finish.")
         print('If you decide that you are finished with all your calculations, type in the code "xxx" to exit the program.')
         print("**************************")
-    
+
     units = input("Enter the units you'd like to use (e.g., meters, centimeters, inches): ")
-    
+
     while True:
         reply = input("What shape would you like to calculate? : ").strip().lower()
-    
+
         if reply != 'xxx':
             if not reply:
                 print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
@@ -85,7 +87,8 @@ def main():
                 if area is not None:
                     print(f"The area of the {reply} is: {area} {units}^2")  # Display the result with user-defined units
                 else:
-                    reply = input("I apologize, but the Area/Perimeter tool only knows 5 shapes right now. Please enter one of the shapes provided.")
+                    reply = input(
+                        "I apologize, but the Area/Perimeter tool only knows 5 shapes right now. Please enter one of the shapes provided.")
                 break
             else:
                 print("Invalid input. Please enter a valid shape name.")
