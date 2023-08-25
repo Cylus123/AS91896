@@ -12,7 +12,6 @@ def yes_no(question):
             # If the response is not 'yes' or 'no', prompt the user again
             print("Please enter 'yes' or 'no'.")
 
-# Define a function to calculate the area of a given shape
 def calculate_area(shape):
     if shape.startswith('t'):
         # If the response starts with 't', that means they want a triangle
@@ -20,21 +19,21 @@ def calculate_area(shape):
         base = float(input("Enter the base length: "))
         height = float(input("Enter the height: "))
         area = 0.5 * base * height
-        return area
+        return round(area, 2)
         
     elif shape.startswith('c'):
         # If the response starts with 'c', that means they want a circle
         print("The formula for Area of a circle is A = π × radius^2")
         radius = float(input("Enter the radius: "))
         area = 3.14159 * radius * radius
-        return area
+        return round(area, 2)
         
     elif shape.startswith('s'):
         # If the response starts with 's', that means they want a square
         print("The formula for Area of a square is A = side^2")
         side = float(input("Enter the side length: "))
         area = side * side
-        return area
+        return round(area, 2)
         
     elif shape.startswith('p'):
         # If the response starts with 'p', that means they want a parallelogram
@@ -42,7 +41,7 @@ def calculate_area(shape):
         base = float(input("Enter the base length: "))
         height = float(input("Enter the height: "))
         area = base * height
-        return area
+        return round(area, 2)
         
     elif shape.startswith('r'):
         # If the response starts with 'r', that means they want a rectangle
@@ -50,7 +49,7 @@ def calculate_area(shape):
         length = float(input("Enter the length: "))
         width = float(input("Enter the width: "))
         area = length * width
-        return area
+        return round(area, 2)
         
     else:
         # If the response is not one of the recognized shapes, return None
