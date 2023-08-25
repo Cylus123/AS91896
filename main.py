@@ -1,1 +1,1 @@
-import calculate_area
+import base_component
