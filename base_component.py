@@ -9,6 +9,16 @@ def yes_no(question):
         else:
             print("Please enter 'yes' or 'no.")
 
+def get_name():
+    while True:
+        name = input("Enter your name: ")
+        if any(char.isdigit() for char in name):
+            print("Invalid input. Name cannot contain numbers.")
+        elif name.strip() == "":
+            print("Invalid input. Name cannot be blank.")
+        else:
+            return name
+
 # Define a function that calculates the area with user-defined units
 def calculate_area(shape, units):
     if shape.startswith('t'):
