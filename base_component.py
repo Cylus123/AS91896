@@ -9,7 +9,7 @@ def yes_no(question):
         else:
             print("Please enter 'yes' or 'no.")
 
-# Define a function that calculates the area of a given shape with user-defined units
+# Define a function that calculates the area with user-defined units
 def calculate_area(shape, units):
     if shape.startswith('t'):
         print(f"The formula for Area of a triangle is A = 1/2 × base × height")
