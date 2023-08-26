@@ -9,6 +9,7 @@ def yes_no(question):
         else:
             print("Please enter 'yes' or 'no.")
 
+# Define a function to get a yes or on response from the user
 def get_name():
     while True:
         name = input("Enter your name: ")
@@ -57,11 +58,8 @@ def calculate_area(shape, units):
     else:
         return None
 
-# Define the main function to run the program
+# Define main function to first ask for the shape and then ask for the units
 def main():
-    user_name = get_name()  # Ask for the user's name
-    print(f"Hello, {user_name}!")
-
     show_instructions = yes_no("Have you used the Area/Perimeter tool before? : ")
 
     if not show_instructions:
@@ -74,7 +72,8 @@ def main():
         print('If you decide that you are finished with all your calculations, type in the code "xxx" to exit the program.')
         print("**************************")
 
-    units = input("Enter the units you'd like to use (e.g., meters, centimeters, inches): ")
+    user_name = get_name()  # Ask for the user's name
+    print(f"Hello, {user_name}!")
 
     while True:
         reply = input("What shape would you like to calculate? : ").strip().lower()
@@ -83,6 +82,7 @@ def main():
             if not reply:
                 print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
             elif reply.isalpha():
+                units = input("Enter the units you'd like to use (e.g., meters, centimeters, inches): ")
                 area = calculate_area(reply, units)
                 if area is not None:
                     print(f"The area of the {reply} is: {area} {units}^2")  # Display the result with user-defined units
@@ -98,4 +98,6 @@ def main():
 
 # Call the main function to run the program
 main()
+
+
 
