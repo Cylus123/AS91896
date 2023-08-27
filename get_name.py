@@ -11,3 +11,6 @@ def get_name():
 if __name__ == "__main__":
     user_name = get_name()
     print("Hello,", user_name)
+  
+get_name()
+

@@ -82,7 +82,15 @@ def main():
             if not reply:
                 print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
             elif reply.isalpha():
-                units = input("Enter the units you'd like to use (e.g., meters, centimeters, inches): ")
+                while True:
+                    units = input("Enter the units you'd like to use (e.g., meters, centimeters, millimeters): ").strip()
+                    if units:
+                        if not any(char.isdigit() for char in units):
+                            break
+                        else:
+                            print("Invalid input. Units cannot contain numbers.")
+                    else:
+                        print("Invalid input. Please enter the units.")
                 area = calculate_area(reply, units)
                 if area is not None:
                     print(f"The area of the {reply} is: {area} {units}^2")  # Display the result with user-defined units
@@ -98,6 +106,7 @@ def main():
 
 # Call the main function to run the program
 main()
+
 
 
 

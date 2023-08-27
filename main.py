@@ -1,1 +1,1 @@
-import get_name
+import base_component
