@@ -25,34 +25,34 @@ def get_name():
 def calculate_area(shape, units):
     if shape.startswith('t'):
         print(f"The formula for Area of a triangle is A = 1/2 × base × height")
-        base = get_numeric_input(f"Enter the base length in {units}: ", 0.01, 99.99)  # Minimum and maximum values
-        height = get_numeric_input(f"Enter the height in {units}: ", 0.01, 99.99)  # Minimum and maximum values
+        base = get_numeric_input(f"Enter the base length in {units}: ", 0.01, 100)  # Minimum and maximum values
+        height = get_numeric_input(f"Enter the height in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = 0.5 * base * height
         return round(area, 2)
         
     elif shape.startswith('c'):
         print(f"The formula for Area of a circle is A = π × radius^2")
-        radius = get_numeric_input(f"Enter the radius in {units}: ", 0.01, 99.99)  # Minimum and maximum values
+        radius = get_numeric_input(f"Enter the radius in {units}: ", 0.01,100)  # Minimum and maximum values
         area = 3.14159 * radius * radius
         return round(area, 2)
         
     elif shape.startswith('s'):
         print(f"The formula for Area of a square is A = side^2")
-        side = get_numeric_input(f"Enter the side length in {units}: ", 0.01, 99.99)  # Minimum and maximum values
+        side = get_numeric_input(f"Enter the side length in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = side * side
         return round(area, 2)
         
     elif shape.startswith('p'):
         print(f"The formula for Area of a parallelogram is A = base × height")
-        base = get_numeric_input(f"Enter the base length in {units}: ", 0.01, 99.99)  # Minimum and maximum values
-        height = get_numeric_input(f"Enter the height in {units}: ", 0.01, 99.99)  # Minimum and maximum values
+        base = get_numeric_input(f"Enter the base length in {units}: ", 0.01, 100)  # Minimum and maximum values
+        height = get_numeric_input(f"Enter the height in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = base * height
         return round(area, 2)
         
     elif shape.startswith('r'):
         print(f"The formula for Area of a rectangle is A = length × width")
-        length = get_numeric_input(f"Enter the length in {units}: ", 0.01, 99.99)  # Minimum and maximum values
-        width = get_numeric_input(f"Enter the width in {units}: ", 0.01, 99.99)    # Minimum and maximum values
+        length = get_numeric_input(f"Enter the length in {units}: ", 0.01, 100)  # Minimum and maximum values
+        width = get_numeric_input(f"Enter the width in {units}: ", 0.01, 100)    # Minimum and maximum values
         area = length * width
         return round(area, 2)
         
@@ -96,7 +96,7 @@ def main():
                 print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
             elif reply.isalpha():
                 while True:
-                    units = input("Enter the units you'd like to use (e.g., meters, centimeters, millimeters): ").strip()
+                    units = input("Enter the units you'd like to use:  ").strip()
                     if units:
                         if not any(char.isdigit() for char in units):
                             break
