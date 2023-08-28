@@ -1,1 +1,1 @@
-import max_min
+import base_component
