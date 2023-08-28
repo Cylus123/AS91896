@@ -1,14 +1,3 @@
-# Define a function to get a valid numeric input within a specified range
-def get_numeric_input(prompt, min_value, max_value):
-    while True:
-        try:
-            value = float(input(prompt))
-            if min_value <= value <= max_value:
-                return value
-            else:
-                print(f"Please enter a value between {min_value} and {max_value}.")
-        except ValueError:
-            print("Invalid input. Please enter a numeric value.")
 
 # Define a function to get a "yes" or "no" response from the user
 def yes_no(question):
@@ -69,6 +58,18 @@ def calculate_area(shape, units):
         
     else:
         return None
+
+# Define a function to get a valid numeric input within a specified range
+def get_numeric_input(prompt, min_value, max_value):
+    while True:
+        try:
+            value = float(input(prompt))
+            if min_value <= value <= max_value:
+                return value
+            else:
+                print(f"Please enter a value between {min_value} and {max_value}.")
+        except ValueError:
+            print("Invalid input. Please enter a numeric value.")
 
 # Define the main function to first ask for the shape and then ask for the units
 def main():
