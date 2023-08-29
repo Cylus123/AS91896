@@ -98,48 +98,54 @@ def main():
             print("**************************")
             print("        INSTRUCTIONS      ")
             print("**************************")
-            print("1. Choose a shape to calculate: triangle, square, rectangle, circle, or parallelogram.")
+            print("1 Enter your name. ")
+            print("2. Choose a shape to calculate: triangle, square, rectangle, circle, or parallelogram.")
             print("2. Enter the required measurements for the selected shape.")
             print("3. Your calculations will be displayed in a table when you finish.")
-            print('If you decide that you are finished with all your calculations, type in the code "xxx" to exit the program.')
+            print("---------------------------")
+            print('If you decide that you are finished with all your calculations even after you say yes ')
+            print("---------------------------")
             print("**************************")
 
-        user_name = get_name()  # Ask for the user's name
-        print(f"Hello, {user_name}!")
-
         while True:
-            reply = input("What shape would you like to calculate? : ").strip().lower()
+            user_name = get_name()  # Ask for the user's name
+            print(f"Hello, {user_name}!")
 
-            if reply != 'xxx':
-                if not reply:
-                    print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
-                elif reply.isalpha():
-                    while True:
-                        units = input("Enter the units you'd like to use:  ").strip()
-                        if units:
-                            if not any(char.isdigit() for char in units):
-                                break
+            while True:
+                reply = input("What shape would you like to calculate? : ").strip().lower()
+
+                if reply != 'xxx':
+                    if not reply:
+                        print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
+                    elif reply.isalpha():
+                        while True:
+                            units = input("Enter the units you'd like to use:  ").strip()
+                            if units:
+                                if not any(char.isdigit() for char in units):
+                                    break
+                                else:
+                                    print("Invalid input. Units cannot contain numbers.")
                             else:
-                                print("Invalid input. Units cannot contain numbers.")
-                        else:
-                            print("Invalid input. Please enter the units.")
-                    calculate_area(reply, units, user_name)
-                    
-                    # Ask if the user wants to use the Area/Perimeter tool again
-                    repeat = yes_no("Would you like to use the Area/Perimeter tool again? (yes/no): ")
-                    if not repeat:
-                        print("Exiting the program.")
-                        display_user_info(user_info)  # Display user information in a table
-                        return  # Exit the program
+                                print("Invalid input. Please enter the units.")
+                        calculate_area(reply, units, user_name)
+                        
+                        # Ask if the user wants to use the Area/Perimeter tool again
+                        repeat = yes_no("Would you like to use the Area/Perimeter tool again?: ")
+                        if not repeat:
+                            print("Exiting the program.")
+                            display_user_info(user_info)  # Display user information in a table
+                            return  # Exit the program
+                    else:
+                        print("Invalid input. Please enter a valid shape name.")
                 else:
-                    print("Invalid input. Please enter a valid shape name.")
-            else:
-                print("Exiting the program.")
-                display_user_info(user_info)  # Display user information in a table
-                return  # Exit the program
+                    print("Exiting the program.")
+                    display_user_info(user_info)  # Display user information in a table
+                    return  # Exit the program
 
 # Call the main function to run the program
 main()
+
+
 
 
 
