@@ -1,6 +1,6 @@
 while True:
     try:
-        user_input = float(input("Please enter a number : "))
+        user_input = float(input("Please enter your values : "))
         
         if 0 < user_input <= 100:
             print("You entered:", user_input)
