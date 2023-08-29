@@ -1,4 +1,3 @@
-
 import tabulate  # Import the tabulate library to create a table
 
 # Create an empty list to store user information
@@ -34,7 +33,6 @@ def get_name():
             print("Invalid input. Name cannot be blank.")
         else:
             return name
-
 # Define a function that calculates the area with user-defined units
 def calculate_area(shape, units):
     if shape.startswith('t'):
@@ -125,7 +123,6 @@ def main():
                 else:
                     reply = input(
                         "I apologize, but the Area/Perimeter tool only knows 5 shapes right now. Please enter one of the shapes provided.")
-                break
             else:
                 print("Invalid input. Please enter a valid shape name.")
         else:
@@ -133,6 +130,17 @@ def main():
             display_user_info(user_info)  # Display user information in a table
             break
 
+    # Ask the user if they want to make another calculation
+    while True:
+        repeat = yes_no("Would you like to make another calculation? (yes/no): ")
+        if repeat:
+            main()  # Call the main function to make another calculation
+        else:
+            print("Thank you for using the Area/Perimeter tool.")
+            display_user_info(user_info)  # Display user information in a table
+            return  # Exit the program
+
 # Call the main function to run the program
 main()
+
 
