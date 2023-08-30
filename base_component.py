@@ -1,4 +1,4 @@
-import tabulate  # Import the tabulate library to create a table
+import tabulate
 
 # Create an empty list to store user information
 user_info = []
@@ -38,76 +38,61 @@ def get_name():
 # Define a function that calculates the area with user-defined units
 def calculate_area(shape, units, name):
     if shape.startswith('tri'):
-        print("")
-        print(f"The formula for Area of a triangle is A = 1/2 × base × height")
-        print("")
+        print("\n")
+        print("The formula for Area of a triangle is A = 1/2 × base × height")
+        print("\n")
         base = max_min_input(f"Enter the base length in {units} : ", 0.01, 100)  # Minimum and maximum values
         height = max_min_input(f"Enter the height in {units} : ", 0.01, 100)  # Minimum and maximum values
         area = 0.5 * base * height
-        print("")
-        print("*************************************************")
+        print("\n*************************************************")
         print(f"The area of the {shape} is: {area} {units}^2") 
-        print("*************************************************")
-        print("")
-      # Display the result with user-defined units
+        print("*************************************************\n")
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
         
     elif shape.startswith('cir'):
-        print("")
-        print(f"The formula for Area of a circle is A = π × radius^2")
-        print("")
+        print("\n")
+        print("The formula for Area of a circle is A = π × radius^2")
+        print("\n")
         radius = max_min_input(f"Enter the radius in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = 3.14159 * radius * radius
-        print("")
-        print("*************************************************")
+        print("\n*************************************************")
         print(f"The area of the {shape} is: {area} {units}^2") 
-        print("*************************************************")
-        print("")
-      # Display the result with user-defined units
+        print("*************************************************\n")
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
         
     elif shape.startswith('squ'):
-        print("")
-        print(f"The formula for Area of a square is A = side^2")
-        print("")
+        print("\n")
+        print("The formula for Area of a square is A = side^2")
+        print("\n")
         side = max_min_input(f"Enter the side length in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = side * side
-        print("")
-        print("*************************************************")
+        print("\n*************************************************")
         print(f"The area of the {shape} is: {area} {units}^2")
-        print("*************************************************")
-        print("")
-      # Display the result with user-defined units
+        print("*************************************************\n")
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
         
     elif shape.startswith('par'):
-        print("")
-        print(f"The formula for Area of a parallelogram is A = base × height")
-        print("")
+        print("\n")
+        print("The formula for Area of a parallelogram is A = base × height")
+        print("\n")
         base = max_min_input(f"Enter the base length in {units}: ", 0.01, 100)  # Minimum and maximum values
         height = max_min_input(f"Enter the height in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = base * height
-        print("")
-        print("*************************************************")
+        print("\n*************************************************")
         print(f"The area of the {shape} is: {area} {units}^2") 
-        print("*************************************************")
-        print("")
-      # Display the result with user-defined units
+        print("*************************************************\n")
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
         
     elif shape.startswith('rec'):
-        print("")
-        print(f"The formula for Area of a rectangle is A = length × width")
-        print("")
+        print("\n")
+        print("The formula for Area of a rectangle is A = length × width")
+        print("\n")
         length = max_min_input(f"Enter the length in {units}: ", 0.01, 100)  # Minimum and maximum values
         width = max_min_input(f"Enter the width in {units}: ", 0.01, 100)    # Minimum and maximum values
         area = length * width
-        print("")
-        print("*************************************************")
+        print("\n*************************************************")
         print(f"The area of the {shape} is: {area} {units}^2")
-        print("*************************************************")
-        print("")
-      # Display the result with user-defined units
+        print("*************************************************\n")
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
         
     else:
@@ -125,7 +110,7 @@ def max_min_input(prompt, min_value, max_value):
         except ValueError:
             print("Invalid input. Please enter a numeric value.")
 
-# Define the main function to first ask for the shape and then ask for the units
+# Define the main function to become a base component in the base component 
 def main():
     while True:
         show_instructions = yes_no("Have you used the Area/Perimeter tool before? : ")
@@ -156,9 +141,18 @@ def main():
                 reply = input("What shape would you like to calculate? : ").strip().lower()
 
                 if reply != 'xxx':
-                    if not reply:
-                        print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
-                    elif reply.isalpha():
+                    if reply.startswith('tri'):
+                        reply = 'triangle'
+                    elif reply.startswith('squ'):
+                        reply = 'square'
+                    elif reply.startswith('rec'):
+                        reply = 'rectangle'
+                    elif reply.startswith('cir'):
+                        reply = 'circle'
+                    elif reply.startswith('par'):
+                        reply = 'parallelogram'
+
+                    if reply in ['triangle', 'square', 'rectangle', 'circle', 'parallelogram']:
                         while True:
                             units = input("Enter the units you'd like to use :  ").strip()
                             if units:
@@ -179,7 +173,7 @@ def main():
                             display_user_info(user_info)  # Display user information in a table
                             return  # Exit the program
                     else:
-                        print("Invalid input. Please enter a valid shape name.")
+                        print("Invalid input. Please enter a valid shape abbreviation (tri, squ, rec, cir, par) or 'xxx' to exit.")
                 else:
                     print("Exiting the program.")
                     display_user_info(user_info)  # Display user information in a table
@@ -187,8 +181,3 @@ def main():
 
 # Call the main function to run the program
 main()
-
-
-
-
-
