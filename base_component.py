@@ -26,7 +26,8 @@ def yes_no(question):
 # Define a function to get a user's name
 def get_name():
     while True:
-        name = input("Enter your name: ")
+        print("")
+        name = input("Enter your name : ")
         if any(char.isdigit() for char in name):
             print("Invalid input. Name cannot contain numbers.")
         elif name.strip() == "":
@@ -36,42 +37,77 @@ def get_name():
 
 # Define a function that calculates the area with user-defined units
 def calculate_area(shape, units, name):
-    if shape.startswith('t'):
+    if shape.startswith('tri'):
+        print("")
         print(f"The formula for Area of a triangle is A = 1/2 × base × height")
-        base = max_min_input(f"Enter the base length in {units}: ", 0.01, 100)  # Minimum and maximum values
-        height = max_min_input(f"Enter the height in {units}: ", 0.01, 100)  # Minimum and maximum values
+        print("")
+        base = max_min_input(f"Enter the base length in {units} : ", 0.01, 100)  # Minimum and maximum values
+        height = max_min_input(f"Enter the height in {units} : ", 0.01, 100)  # Minimum and maximum values
         area = 0.5 * base * height
-        print(f"The area of the {shape} is: {area} {units}^2")  # Display the result with user-defined units
+        print("")
+        print("****************************")
+        print(f"The area of the {shape} is: {area} {units}^2") 
+        print("****************************")
+        print("")
+      # Display the result with user-defined units
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
         
-    elif shape.startswith('c'):
+    elif shape.startswith('cir'):
+        print("")
         print(f"The formula for Area of a circle is A = π × radius^2")
+        print("")
         radius = max_min_input(f"Enter the radius in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = 3.14159 * radius * radius
-        print(f"The area of the {shape} is: {area} {units}^2")  # Display the result with user-defined units
+        print("")
+        print("****************************")
+        print(f"The area of the {shape} is: {area} {units}^2") 
+        print("****************************")
+        print("")
+      # Display the result with user-defined units
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
         
-    elif shape.startswith('s'):
+    elif shape.startswith('squ'):
+        print("")
         print(f"The formula for Area of a square is A = side^2")
+        print("")
         side = max_min_input(f"Enter the side length in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = side * side
-        print(f"The area of the {shape} is: {area} {units}^2")  # Display the result with user-defined units
+        print("")
+        print("****************************")
+        print(f"The area of the {shape} is: {area} {units}^2")
+        print("****************************")
+        print("")
+      # Display the result with user-defined units
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
         
-    elif shape.startswith('p'):
+    elif shape.startswith('par'):
+        print("")
         print(f"The formula for Area of a parallelogram is A = base × height")
+        print("")
         base = max_min_input(f"Enter the base length in {units}: ", 0.01, 100)  # Minimum and maximum values
         height = max_min_input(f"Enter the height in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = base * height
-        print(f"The area of the {shape} is: {area} {units}^2")  # Display the result with user-defined units
+        print("")
+        print("****************************")
+        print(f"The area of the {shape} is: {area} {units}^2") 
+        print("****************************")
+        print("")
+      # Display the result with user-defined units
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
         
-    elif shape.startswith('r'):
+    elif shape.startswith('rec'):
+        print("")
         print(f"The formula for Area of a rectangle is A = length × width")
+        print("")
         length = max_min_input(f"Enter the length in {units}: ", 0.01, 100)  # Minimum and maximum values
         width = max_min_input(f"Enter the width in {units}: ", 0.01, 100)    # Minimum and maximum values
         area = length * width
-        print(f"The area of the {shape} is: {area} {units}^2")  # Display the result with user-defined units
+        print("")
+        print("*************************************************")
+        print(f"The area of the {shape} is: {area} {units}^2")
+        print("*************************************************")
+        print("")
+      # Display the result with user-defined units
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
         
     else:
@@ -98,18 +134,23 @@ def main():
             print("**************************")
             print("        INSTRUCTIONS      ")
             print("**************************")
-            print("1 Enter your name. ")
+            print("")
+            print("1. Enter your name.")
             print("2. Choose a shape to calculate: triangle, square, rectangle, circle, or parallelogram.")
-            print("2. Enter the required measurements for the selected shape.")
-            print("3. Your calculations will be displayed in a table when you finish.")
-            print("---------------------------")
-            print('If you decide that you are finished with all your calculations even after you say yes ')
-            print("---------------------------")
+            print("3. Enter the required measurements for the selected shape.")
+            print("4. Your calculations will be displayed in a table when you finish.")
+            print("")  
+            print("--------------------------")
+            print('PS. If you decide that you are finished with all your calculations, type in the code "xxx" to exit the program.')
+            print("--------------------------")
+            print("")
             print("**************************")
 
         while True:
             user_name = get_name()  # Ask for the user's name
-            print(f"Hello, {user_name}!")
+            print("")
+            print(f"Hello {user_name}!")
+            print("")
 
             while True:
                 reply = input("What shape would you like to calculate? : ").strip().lower()
@@ -119,7 +160,7 @@ def main():
                         print("You did not enter a shape. Please enter a valid shape name or 'xxx' to exit.")
                     elif reply.isalpha():
                         while True:
-                            units = input("Enter the units you'd like to use:  ").strip()
+                            units = input("Enter the units you'd like to use :  ").strip()
                             if units:
                                 if not any(char.isdigit() for char in units):
                                     break
@@ -130,7 +171,9 @@ def main():
                         calculate_area(reply, units, user_name)
                         
                         # Ask if the user wants to use the Area/Perimeter tool again
-                        repeat = yes_no("Would you like to use the Area/Perimeter tool again?: ")
+                        print("")
+                        repeat = yes_no("Would you like to use the Area/Perimeter tool again? : ")
+                        print("")
                         if not repeat:
                             print("Exiting the program.")
                             display_user_info(user_info)  # Display user information in a table
