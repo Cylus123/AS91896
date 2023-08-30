@@ -5,6 +5,7 @@ user_info = []
 
 # Define a function to display the user information in a table
 def display_user_info(info):
+    
     headers = ["Name", "Shape", "Units", "Area"]
     table = []
     for entry in info:
@@ -14,6 +15,7 @@ def display_user_info(info):
 
 # Define a function to get a "yes" or "no" response from the user
 def yes_no(question):
+    
     while True:
         reply = input(question).strip().lower()
         if reply.startswith('y'):
@@ -25,6 +27,7 @@ def yes_no(question):
 
 # Define a function to get a user's name
 def get_name():
+    
     while True:
         print("")
         name = input("Enter your name : ")
@@ -37,6 +40,7 @@ def get_name():
 
 # Define a function that calculates the area with user-defined units
 def calculate_area(shape, units, name):
+    
     if shape.startswith('tri'):
         print("\n")
         print("The formula for Area of a triangle is A = 1/2 × base × height")
@@ -100,6 +104,7 @@ def calculate_area(shape, units, name):
 
 # Define a function to get a valid numeric input within a specified range
 def max_min_input(prompt, min_value, max_value):
+    
     while True:
         try:
             value = float(input(prompt))
@@ -112,6 +117,7 @@ def max_min_input(prompt, min_value, max_value):
 
 # Define the main function to become a base component in the base component 
 def main():
+    
     while True:
         show_instructions = yes_no("Have you used the Area/Perimeter tool before? : ")
 
@@ -173,11 +179,15 @@ def main():
                             display_user_info(user_info)  # Display user information in a table
                             return  # Exit the program
                     else:
-                        print("Invalid input. Please enter a valid shape abbreviation (tri, squ, rec, cir, par) or 'xxx' to exit.")
+                        print("Invalid input. Please enter a shape that the Area/Perimeter tool knows.")
                 else:
                     print("Exiting the program.")
                     display_user_info(user_info)  # Display user information in a table
                     return  # Exit the program
+
+# Call the main function to run the program
+main()
+
 
 # Call the main function to run the program
 main()
