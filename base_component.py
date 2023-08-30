@@ -45,9 +45,9 @@ def calculate_area(shape, units, name):
         height = max_min_input(f"Enter the height in {units} : ", 0.01, 100)  # Minimum and maximum values
         area = 0.5 * base * height
         print("")
-        print("****************************")
+        print("*************************************************")
         print(f"The area of the {shape} is: {area} {units}^2") 
-        print("****************************")
+        print("*************************************************")
         print("")
       # Display the result with user-defined units
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
@@ -59,9 +59,9 @@ def calculate_area(shape, units, name):
         radius = max_min_input(f"Enter the radius in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = 3.14159 * radius * radius
         print("")
-        print("****************************")
+        print("*************************************************")
         print(f"The area of the {shape} is: {area} {units}^2") 
-        print("****************************")
+        print("*************************************************")
         print("")
       # Display the result with user-defined units
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
@@ -73,9 +73,9 @@ def calculate_area(shape, units, name):
         side = max_min_input(f"Enter the side length in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = side * side
         print("")
-        print("****************************")
+        print("*************************************************")
         print(f"The area of the {shape} is: {area} {units}^2")
-        print("****************************")
+        print("*************************************************")
         print("")
       # Display the result with user-defined units
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
@@ -88,9 +88,9 @@ def calculate_area(shape, units, name):
         height = max_min_input(f"Enter the height in {units}: ", 0.01, 100)  # Minimum and maximum values
         area = base * height
         print("")
-        print("****************************")
+        print("*************************************************")
         print(f"The area of the {shape} is: {area} {units}^2") 
-        print("****************************")
+        print("*************************************************")
         print("")
       # Display the result with user-defined units
         user_info.append({"name": name, "shape": shape, "units": units, "area": f"{area} {units}^2"})
