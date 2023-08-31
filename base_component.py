@@ -108,6 +108,8 @@ def main():
         print("")
         print("**************************")
 
+    allowed_units = ["mm", "cm", "m"]
+
     while True:
         user_name = get_name()  # Ask for the user's name
         print(f"\nHello {user_name}!\n")
@@ -132,11 +134,11 @@ def main():
 
             if shape in ['triangle', 'square', 'rectangle', 'circle', 'parallelogram']:
                 while True:
-                    units = input("Enter the units you'd like to use: ").strip()
-                    if not any(char.isdigit() for char in units) and units != "":
+                    units = input("Enter the units you'd like to use: ").strip().lower()
+                    if units in allowed_units:
                         break
                     else:
-                        print("Invalid input. Units cannot be empty or contain numbers.")
+                        print("Invalid input. Please enter one of the allowed units: mm, cm, or m.")
 
                 calculate_area(shape, units, user_name)
                 
@@ -151,4 +153,7 @@ def main():
                 print("Invalid input. Please enter a shape that the Area/Perimeter tool knows.")
 
 # Call the main function to run the program
+
+
 main()
+
